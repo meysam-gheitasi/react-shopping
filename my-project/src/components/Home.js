@@ -12,7 +12,7 @@ const Home = () => {
     const Products = useContext( ProductsContext );
     
     return (
-        <div>
+        <div className=' flex flex-wrap justify-between'>
             {
                 Products.map( item => <Cart key={item.id} product={item} />)
             }

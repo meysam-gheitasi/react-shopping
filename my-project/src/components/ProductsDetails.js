@@ -6,11 +6,11 @@ import { ProductsContext } from '../context/ProductsContextProvider';
 
 const ProductsDetails = () => {
 
-    const products = useContext(ProductsContext)
+    const products = useContext(ProductsContext);
 
     const params = useParams();
-    const product = products[params.id - 1]
-    console.log(product)
+    const product = products[params.id - 1];
+    const [image, title, description, price, category] = product;
 
     return (
         <div>

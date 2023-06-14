@@ -1,7 +1,8 @@
 import React from 'react';
 import { shorten } from '../../helper/function';
+import { Link } from 'react-router-dom';
 
-const Cart = ( {product} ) => {
+const Cart = ({ product }) => {
 
     return (
         <div className='flex border-solid rounded-lg shadow-md'>
@@ -13,14 +14,13 @@ const Cart = ( {product} ) => {
                 <p>{product.price}</p>
 
                 <div className='flex justify-between'>
-                  
-                   <a href='#'>
+
+                    <Link to={`/products/${product.id}`}>
                     <h4 className="text-sky-500">Details</h4>
-                    </a>
-                   
-                   <div>
-                    <button className='btn btn-blue'>Add</button>
-                   </div>
+                    </Link>
+                    <div>
+                        <button className='btn btn-blue'>Add</button>
+                    </div>
 
                 </div>
             </div>

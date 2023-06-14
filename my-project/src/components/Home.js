@@ -1,10 +1,9 @@
-
 import React, { useContext } from 'react';
 
 // Products Context
 import { ProductsContext } from '../context/ProductsContextProvider';
 
-
+// Cart component to display each product
 import Cart from './shared/Cart';
 
 const Home = () => {

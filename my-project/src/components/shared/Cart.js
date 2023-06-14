@@ -14,7 +14,7 @@ const Cart = ( {product} ) => {
 
                 <div className='flex justify-between'>
                   
-                   <a href='/'>
+                   <a href='#'>
                     <h4 className="text-sky-500">Details</h4>
                     </a>
                    

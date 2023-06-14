@@ -5,7 +5,7 @@ import ProductsContextProvider from "./context/ProductsContextProvider";
 
 function App() {
   return (
-    <div>
+    <div className="flex justify-center">
       <ProductsContextProvider>
         <Home />
       </ProductsContextProvider>

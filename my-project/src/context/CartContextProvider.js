@@ -25,6 +25,13 @@ const cartReducer = (state, action) => {
                 selectedItems: [...state.selectedItems]
             }
 
+        case "REMOVE_ITEM":
+            const newSelectedItems = state.selectedItems.filter(item => item.id !== action.payload)
+            return {
+                ...state,
+                selectedItems: [...newSelectedItems]
+            }
+
         
     }
 }

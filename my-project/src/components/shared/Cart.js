@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
-// A method for shortening strings and converting them into the first two parts
-import { shorten } from '../../helper/function';
+// A method to check the presence of a product in the shopping cart /isInCart/
+// A method for shortening strings and converting them into the first two parts /shorten/
+import { isInCart, shorten } from '../../helper/function';
 
 // Shopping cart and reducer methods
 import { CartContext } from '../../context/CartContextProvider';

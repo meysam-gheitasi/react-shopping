@@ -11,8 +11,8 @@ import { CartContext } from '../../context/CartContextProvider';
 
 const Cart = ({ product }) => {
 
-    const {state, dispatch} = useContext(CartContext);
-    
+    const { state, dispatch } = useContext(CartContext);
+
     return (
         <div className='flex border-solid rounded-lg shadow-md'>
 
@@ -25,10 +25,14 @@ const Cart = ({ product }) => {
                 <div className='flex justify-between'>
 
                     <Link to={`/products/${product.id}`}>
-                    <h4 className="text-sky-500">Details</h4>
+                        <h4 className="text-sky-500">Details</h4>
                     </Link>
                     <div>
-                        <button className='btn btn-blue'>Add</button>
+                        {
+                            isInCart(state, product.id) ?
+                                <button onClick={() => dispatch({ type: "INCREASE", payload: product })}>+</button> :
+                                <button onClick={() => dispatch({ type: "ADD_ITEM", payload: product })}>Add to Cart</button>
+                        }
                     </div>
 
                 </div>

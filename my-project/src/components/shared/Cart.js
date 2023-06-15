@@ -1,9 +1,17 @@
-import React from 'react';
-import { shorten } from '../../helper/function';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+
+// A method for shortening strings and converting them into the first two parts
+import { shorten } from '../../helper/function';
+
+// Shopping cart and reducer methods
+import { CartContext } from '../../context/CartContextProvider';
+
 
 const Cart = ({ product }) => {
 
+    const {state, dispatch} = useContext(CartContext);
+    
     return (
         <div className='flex border-solid rounded-lg shadow-md'>
 

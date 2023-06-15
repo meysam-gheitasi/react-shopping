@@ -10,12 +10,23 @@ const ProductsDetails = () => {
 
     const params = useParams();
     const product = products[params.id - 1];
-    const [image, title, description, price, category] = product;
+    const {image, title, description, price, category} = product;
 
     return (
+        <div className='flex solid rounded-lg shadow-md bg-slate-100'>
         <div>
-            ProductsDetails - {params.id}
+            <img src={image} alt={title} />
         </div>
+        <div className='flex flex-col rounded-lg solid bg-white'>
+            <h2 className='text-sky-600'>{title}</h2>
+            <p>{description}</p>
+            <p>{category}</p>
+            <div className='flex'>
+                <span>{price}</span>
+                <button className='btn btn-blue'>Back to Shop</button>
+            </div>
+        </div>
+    </div>
     );
 }
 

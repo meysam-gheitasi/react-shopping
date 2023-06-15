@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 // Products Context
 import { ProductsContext } from '../context/ProductsContextProvider';
@@ -23,7 +23,7 @@ const ProductsDetails = () => {
             <p>{category}</p>
             <div className='flex'>
                 <span>{price}</span>
-                <button className='btn btn-blue'>Back to Shop</button>
+                <Link to="/">Back to Shop</Link>
             </div>
         </div>
     </div>

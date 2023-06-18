@@ -36,7 +36,9 @@ const Cart = ({ product }) => {
                         {
                             quantitiyCount(state, product.id) === 1 && <button onClick={() => dispatch({ type: "REMOVE_ITEM", payload: product})}>Remove</button>
                         }
-                        
+                        {
+                            quantitiyCount(state, product.id) > 1 && <button onClick={() => dispatch({ type: "DECREASE", payload: product })}>-</button>
+                        }
                         
                     </div>
 

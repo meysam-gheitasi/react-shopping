@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 // A method to check the presence of a product in the shopping cart /isInCart/
 // A method for shortening strings and converting them into the first two parts /shorten/
-import { isInCart, shorten } from '../../helper/function';
+import { isInCart, quantitiyCount, shorten } from '../../helper/function';
 
 // Shopping cart and reducer methods
 import { CartContext } from '../../context/CartContextProvider';
@@ -32,6 +32,12 @@ const Cart = ({ product }) => {
                             isInCart(state, product.id) ?
                                 <button onClick={() => dispatch({ type: "INCREASE", payload: product })}>+</button> :
                                 <button onClick={() => dispatch({ type: "ADD_ITEM", payload: product })}>Add to Cart</button>
+                        }
+                        {
+                            quantitiyCount(state, product.id) >1 && <button onClick={() => dispatch({ type: "DECREASE", payload: product })}>-</button>
+                        }
+                        {
+                            quantitiyCount(state, product.id) ===1 && <button onClick={() => dispatch({ type: "REMOVE_ITEM", payload: product})}>Remove</button>
                         }
                     </div>
 

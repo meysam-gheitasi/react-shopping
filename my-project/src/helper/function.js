@@ -16,7 +16,7 @@ const quantitiyCount = (state, id) => {
     if (index === -1) {
         return false
     } else {
-        return state.selectedItems[index].quantitiyCount
+        return state.selectedItems[index].quantity
     }
 }
 

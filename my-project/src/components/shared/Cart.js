@@ -8,6 +8,9 @@ import { isInCart, quantitiyCount, shorten } from '../../helper/function';
 // Shopping cart and reducer methods
 import { CartContext } from '../../context/CartContextProvider';
 
+// Icons
+
+import trashIcon from '../../assets/icons/trash.svg';
 
 const Cart = ({ product }) => {
 
@@ -34,7 +37,9 @@ const Cart = ({ product }) => {
                                 <button onClick={() => dispatch({ type: "ADD_ITEM", payload: product })}>Add to Cart</button>
                         }
                         {
-                            quantitiyCount(state, product.id) === 1 && <button onClick={() => dispatch({ type: "REMOVE_ITEM", payload: product})}>Remove</button>
+                            quantitiyCount(state, product.id) === 1 && <button onClick={() => dispatch({ type: "REMOVE_ITEM", payload: product})}>
+                                <img className='w-5' alt='trash icon' src={trashIcon} />
+                            </button>
                         }
                         {
                             quantitiyCount(state, product.id) > 1 && <button onClick={() => dispatch({ type: "DECREASE", payload: product })}>-</button>

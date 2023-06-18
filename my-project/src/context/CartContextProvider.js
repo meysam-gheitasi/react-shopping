@@ -8,6 +8,9 @@ const initialState = {
 }
 
 const cartReducer = (state, action) => {
+
+    console.log(state)
+
     switch (action.type) {
 
         default:

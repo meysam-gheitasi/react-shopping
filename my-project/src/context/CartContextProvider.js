@@ -9,7 +9,7 @@ const initialState = {
 
 const sumItems = items => {
     const itemCounter = items.reduce((total, product) => total + product.quantity, 0);
-    let total = items.reduce((total, product) => total + product.price * product.quantity, 0);
+    const total = items.reduce((total, product) => total + product.price * product.quantity, 0);
     return {itemCounter, total}
 }
 

@@ -1,5 +1,6 @@
 // Products Context
 import Home from "./components/Home";
+import Navbar from "./components/Navbar";
 import ProductsDetails from "./components/ProductsDetails";
 import CartContextProvider from "./context/CartContextProvider";
 import ProductsContextProvider from "./context/ProductsContextProvider";
@@ -11,10 +12,11 @@ function App() {
     <div className="flex justify-center">
       <ProductsContextProvider>
         <CartContextProvider>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products/:id" element={<ProductsDetails />} />
-        </Routes>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/products/:id" element={<ProductsDetails />} />
+          </Routes>
         </CartContextProvider>
       </ProductsContextProvider>
     </div>

@@ -14,11 +14,10 @@ const Navbar = () => {
     return (
         <div>
             <div>
-                <Link to="/Cart" >Cart</Link>
-                <div>
+                <Link to="/Cart" >Cart
                     <img src={shopIcon} alt='shopping' />
                     <span>{state.itemCounter}</span>
-                </div>
+                </Link>
             </div>
         </div>
     );

@@ -17,7 +17,7 @@ const Navbar = () => {
                 <Link to="/" >Products </Link>
             </div>
             <div>
-                <Link to="/ShopCart">
+                <Link to="/shopcart">
                     <img src={shopIcon} alt='shopping' />
                     <span>{state.itemCounter}</span>
                 </Link>

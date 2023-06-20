@@ -2,6 +2,7 @@
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import ProductsDetails from "./components/ProductsDetails";
+import ShopCart from "./components/ShopCart";
 import CartContextProvider from "./context/CartContextProvider";
 import ProductsContextProvider from "./context/ProductsContextProvider";
 
@@ -15,6 +16,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/ShopCart" element={<ShopCart />} />
             <Route path="/products/:id" element={<ProductsDetails />} />
           </Routes>
         </CartContextProvider>

@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
 // icons
 import shopIcon from "../assets/icons/shopping.svg"
 
 // context cart state
 import { CartContext } from '../context/CartContextProvider';
-import { Link } from 'react-router-dom';
+
 
 const Navbar = () => {
 

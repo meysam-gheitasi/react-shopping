@@ -35,6 +35,13 @@ const ShopCart = () => {
                     <Link to='/'>Buy More</Link>
                 </div>
             }
+            {
+                !state.checkout && state.itemCounter === 0 &&
+                <div>
+                    <h3>Want to Buy ?</h3>
+                    <Link to='/'>Go to Shop</Link>
+                </div>
+            }
         </div>
     );
 }

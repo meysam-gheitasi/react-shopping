@@ -4,6 +4,7 @@ import React, { useContext } from 'react';
 import { CartContext } from '../context/CartContextProvider';
 
 import CartUser from './CartUser';
+import { Link } from 'react-router-dom';
 
 const ShopCart = () => {
 
@@ -27,6 +28,13 @@ const ShopCart = () => {
                     </div>
                 }
             </div>
+            {
+                state.checkout && 
+                <div>
+                    <h3>Check Out Successfully</h3>
+                    <Link to='/'>Buy More</Link>
+                </div>
+            }
         </div>
     );
 }

@@ -7,13 +7,11 @@ import CartUser from './CartUser';
 
 const ShopCart = () => {
 
-    const {state, dispatch} = useContext(CartContext)
+    const { state, dispatch } = useContext(CartContext)
 
     return (
         <div className='flex flex-col'>
-            {
-                state.selectedItems.map(item => <CartUser key={item.id} data={item} />)
-            }
+            {state.selectedItems.map(item => <CartUser key={item.id} data={item} />)}
             <h2>Shop</h2>
         </div>
     );

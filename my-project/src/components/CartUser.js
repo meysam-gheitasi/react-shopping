@@ -1,6 +1,12 @@
 import React from 'react';
 
-const CartUser = ({data}) => {
+//Context Cart Shopping
+import { CartContext } from '../context/CartContextProvider';
+
+const CartUser = ({ data }) => {
+
+    const { image, title, price, quantity } = data
+
     return (
         <div>
             

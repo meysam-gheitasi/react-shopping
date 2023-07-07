@@ -28,11 +28,11 @@ const CartUser = ({ data }) => {
             <div>
                 {
                     quantity > 1 ?
-                    <button onClick={() => dispatch({ type: "DECREASE", pyload: data })}>-</button> :
-                    <button onClick={() => dispatch({ type: "REMOVE_ITEM", pyload: data})}>{trash}</button>
+                    <button onClick={() => dispatch({ type: "DECREASE", payload: data })}>-</button> :
+                    <button onClick={() => dispatch({ type: "REMOVE_ITEM", payload: data})}><img className='w-5' src={trash} alt='trash' /></button>
                 }
                 {
-                    <button onClick={() => dispatch({ type: "INCREASE", pyload: data })}>+</button>
+                    <button onClick={() => dispatch({ type: "INCREASE", payload: data })}>+</button>
                 }
             </div>
         </div>

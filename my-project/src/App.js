@@ -10,10 +10,14 @@ import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div className="flex justify-center">
+    <div className="bg-slate-300 w-full overflow-hidden">
+      <div className="sm:px-16 px-6 flex justify-center items-center ">
+        <div className="w-full xl:max-w-[1280px]">
+          <Navbar />
+        </div>
+      </div>
       <ProductsContextProvider>
         <CartContextProvider>
-          <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/shopcart" element={<ShopCart />} />

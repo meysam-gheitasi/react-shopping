@@ -10,6 +10,7 @@ import { CartContext } from '../context/CartContextProvider';
 
 const Navbar = () => {
 
+    
     const { state } = useContext(CartContext);
 
     return (

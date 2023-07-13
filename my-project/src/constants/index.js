@@ -9,11 +9,10 @@ export const navLink = [
         title: "Products"
     },
     {
-        id: "cart",
-        title: "Cart"
+        id: "account",
+        title: "Account"
     },
     {
-        id: "account",
-        title: "Home"
+        id: "cart"
     }
 ]

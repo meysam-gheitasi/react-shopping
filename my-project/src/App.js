@@ -10,22 +10,24 @@ import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div className="bg-slate-300 w-full overflow-hidden">
-      <div className="sm:px-16 px-6 flex justify-center items-center ">
-        <div className="w-full xl:max-w-[1280px]">
-          <Navbar />
-        </div>
-      </div>
-      <ProductsContextProvider>
-        <CartContextProvider>
+    <ProductsContextProvider>
+      <CartContextProvider>
+        <div className="bg-slate-300 w-full overflow-hidden">
+          <div className="sm:px-16 px-6 flex justify-center items-center ">
+            <div className="w-full xl:max-w-[1280px]">
+              <Navbar />
+            </div>
+          </div>
+
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/shopcart" element={<ShopCart />} />
             <Route path="/products/:id" element={<ProductsDetails />} />
           </Routes>
-        </CartContextProvider>
-      </ProductsContextProvider>
-    </div>
+
+        </div>
+      </CartContextProvider>
+    </ProductsContextProvider>
   );
 }
 

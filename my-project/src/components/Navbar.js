@@ -24,7 +24,8 @@ const Navbar = () => {
                     ${index === navLink.length - 1 ? "mr-0" : "mr-10"}`}>
                         <Link to={`#${item.id}`}>
                             {item.title}
-                            {item.id === "cart" &&
+                            {
+                                item.id === "cart" &&
                                 <Link className='flex' to="/shopcart">
                                     <img src={shopIcon} alt='shopping' className='w-[25px]' />
                                     {state.itemCounter > 0 &&

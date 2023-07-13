@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 // icons
@@ -16,6 +16,8 @@ import { navLink } from '../constants';
 const Navbar = () => {
 
     const { state } = useContext(CartContext);
+
+    const [toggle, setToggle] = useState(false);
 
     return (
         <nav className='navbar flex w-full py-6 justify-between items-center'>
@@ -38,13 +40,14 @@ const Navbar = () => {
                     </li>
                 ))}
             </ul>
+            
+            <div className=' sm:hidden flex flex-1 justify-end items-center'>
+                <img src={toggle ? close : menu} alt='Hamburger menu' 
+                className=' w-[28px] h-[28px] object-contain'
+                onClick={() => setToggle(prev => !prev)}
+                />
+            </div>
 
-            {/* <div>
-                <Link to="/shopcart">
-                    <img src={shopIcon} alt='shopping' />
-                    <span>{state.itemCounter}</span>
-                </Link>
-            </div> */}
         </nav>
     );
 }

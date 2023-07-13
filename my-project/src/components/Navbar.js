@@ -2,11 +2,14 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 // icons
-import shopIcon from "../assets/icons/shopping.svg";
+import shopping from "../assets/icons/shopping.svg";
+import logo from "../assets/icons/logo.png";
+import close from "../assets/icons/close.svg";
+import menu from "../assets/icons/menu.svg";
+
 // context cart state
 import { CartContext } from '../context/CartContextProvider';
-// logo
-import logo from "../assets/logo.png";
+
 // nav data
 import { navLink } from '../constants';
 
@@ -24,12 +27,11 @@ const Navbar = () => {
                     ${index === navLink.length - 1 ? "mr-0" : "mr-10"}`}>
                         <Link to={`#${item.id}`}>
                             {item.title}
-                            {
-                                item.id === "cart" &&
+                            {item.id === "cart" &&
                                 <Link className='flex' to="/shopcart">
-                                    <img src={shopIcon} alt='shopping' className='w-[25px]' />
+                                    <img src={shopping} alt='shopping' className='w-[25px]' />
                                     {state.itemCounter > 0 &&
-                                        <span>{state.itemCounter}</span>}
+                                    <span>{state.itemCounter}</span> }
                                 </Link>
                             }
                         </Link>

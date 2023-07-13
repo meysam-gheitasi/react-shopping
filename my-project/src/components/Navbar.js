@@ -29,25 +29,44 @@ const Navbar = () => {
                     ${index === navLink.length - 1 ? "mr-0" : "mr-10"}`}>
                         <Link to={`#${item.id}`}>
                             {item.title}
-                            {item.id === "cart" &&
-                                <Link className='flex' to="/shopcart">
-                                    <img src={shopping} alt='shopping' className='w-[25px]' />
-                                    {state.itemCounter > 0 &&
-                                        <span>{state.itemCounter}</span>}
-                                </Link>
-                            }
                         </Link>
+                        {item.id === "cart" &&
+                            <Link className='flex' to="/shopcart">
+                                <img src={shopping} alt='shopping' className='w-[25px]' />
+                                {state.itemCounter > 0 &&
+                                    <span>{state.itemCounter}</span>}
+                            </Link>
+                        }
                     </li>
                 ))}
             </ul>
 
             <div className=' sm:hidden flex flex-1 justify-end items-center'>
+                {navLink.map(item => (
+                    item.id === "cart" &&
+                    <Link className='flex items-center px-8' to="/shopcart">
+                        <img src={shopping} alt='shopping' className='w-[45px]' />
+                        {state.itemCounter > 0 &&
+                            <span>{state.itemCounter}</span>}
+                    </Link>
+                ))}
                 <img src={toggle ? close : menu} alt='Hamburger menu'
                     className=' w-[28px] h-[28px] object-contain'
                     onClick={() => setToggle(prev => !prev)}
                 />
                 <div className={`${toggle ? 'flex' : 'hidden'} p-6 bg-black-gradient
-                   absolute top-20 right-0 mx-4 my-6 min-w-[140px] rounded-xl sidebar`}>65</div>
+                   absolute top-20 right-0 mx-4 my-6 min-w-[140px] rounded-xl sidebar`}>
+
+                    <ul className=' list-none flex flex-1 justify-end items-center flex-col'>
+                        {navLink.map(item => (
+                            <li key={item.id} className=' font-normal text-white text-[16px] cursor-pointer'>
+                                <Link to={`#${item.id}`}>{item.title}
+                                </Link>
+                            </li>
+
+                        ))}
+                    </ul>
+                </div>
             </div>
 
         </nav>
